@@ -376,6 +376,14 @@ you should place your code here."
   ;; https://github.com/dgutov/diff-hl
   (add-hook 'magit-post-refresh-hook 'diff-hl-magit-post-refresh)
 
+  ;; https://github.com/syl20bnr/spacemacs/issues/5070
+  (defun evil-paste-after-from-0 ()
+    (interactive)
+    (let ((evil-this-register ?0))
+      (call-interactively 'evil-paste-after)))
+
+  (define-key evil-visual-state-map "p" 'evil-paste-after-from-0)
+
 )
 
 ;; Do not write anything past this comment. This is where Emacs will
