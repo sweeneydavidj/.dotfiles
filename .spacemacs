@@ -384,6 +384,19 @@ you should place your code here."
 
   (define-key evil-visual-state-map "p" 'evil-paste-after-from-0)
 
+  ;; https://elixirforum.com/t/emacs-elixir-setup-configuration-wiki/19196/161
+
+  (with-eval-after-load 'lsp-mode
+    (add-to-list 'lsp-file-watch-ignored "artifacts$")
+    (add-to-list 'lsp-file-watch-ignored "assets$")
+    (add-to-list 'lsp-file-watch-ignored "_build$")
+    (add-to-list 'lsp-file-watch-ignored "deps$")
+    (add-to-list 'lsp-file-watch-ignored "docker$")
+    (add-to-list 'lsp-file-watch-ignored "docs$")
+    (add-to-list 'lsp-file-watch-ignored ".elixir_ls$")
+    (add-to-list 'lsp-file-watch-ignored "priv/static$")
+    )
+
 )
 
 ;; Do not write anything past this comment. This is where Emacs will
