@@ -397,6 +397,25 @@ you should place your code here."
     (add-to-list 'lsp-file-watch-ignored "priv/static$")
     )
 
+  (add-to-list 'load-path "/opt/exunit.el")
+  (require 'exunit)
+
+  (with-eval-after-load 'elixir-mode
+    (spacemacs/declare-prefix-for-mode 'elixir-mode
+      "mt" "tests" "testing related functionality")
+    (spacemacs/set-leader-keys-for-major-mode 'elixir-mode
+      "tb" 'exunit-verify
+      "tr" 'exunit-rerun
+      "tt" 'exunit-verify-single))
+
+  (push '("*exunit-compilation*"
+          :dedicated t
+          :position bottom
+          :stick t
+          :height 0.3
+          :noselect t)
+        popwin:special-display-config)
+
 )
 
 ;; Do not write anything past this comment. This is where Emacs will
