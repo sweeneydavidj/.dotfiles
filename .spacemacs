@@ -390,6 +390,10 @@ you should place your code here."
     (add-to-list 'lsp-file-watch-ignored "artifacts$")
     (add-to-list 'lsp-file-watch-ignored "assets$")
     (add-to-list 'lsp-file-watch-ignored "_build$")
+    (add-to-list 'lsp-file-watch-ignored "chemo_engine$")
+    (add-to-list 'lsp-file-watch-ignored "strat_calc$")
+    (add-to-list 'lsp-file-watch-ignored "chemo_calc$")
+    (add-to-list 'lsp-file-watch-ignored "reflex$")
     (add-to-list 'lsp-file-watch-ignored "deps$")
     (add-to-list 'lsp-file-watch-ignored "docker$")
     (add-to-list 'lsp-file-watch-ignored "docs$")
@@ -412,8 +416,8 @@ you should place your code here."
           :dedicated t
           :position bottom
           :stick t
-          :height 0.3
-          :noselect t)
+          :height 0.3)
+          ;; :noselect t)
         popwin:special-display-config)
 
 )
